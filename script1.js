@@ -13,11 +13,10 @@ try {
 
 	// updating data in card when "Search" button is clicked
 	button.addEventListener("click", async () => {
-		console.log("button clicked");
-		console.log("city.value");
 		let resultData = await fetchdata(city.value);
 		displaySearchData(resultData);
 		cityname.textContent = city.value; // update heading
+		city.value = ""; // clearing input value
 	});
 } catch (error) {
 	console.error(error);
@@ -77,5 +76,4 @@ getFrequentCityData();
 
 function handleSubmit(event) {
 	event.preventDefault();
-	console.log("Crisis Averted!");
 }
